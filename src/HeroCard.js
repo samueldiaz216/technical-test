@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import "./HeroCard.css";
 import SkillLevelBar from './SkillLevelBar';
 
-function HeroCard({id, name, image, powerStats, appearance, setCurrentHeroPageID, setCurrentHeroPageActive}) {
+function HeroCard({id, name, image, powerStats, appearance}) {
 
     const overall=getOverallAverageSkill();
 
@@ -16,10 +16,7 @@ function HeroCard({id, name, image, powerStats, appearance, setCurrentHeroPageID
 
 
     return (
-        <div className="hero-card" onClick={()=>{
-            setCurrentHeroPageID(id);
-            setCurrentHeroPageActive(true);
-        }}>
+        <div className="hero-card">
             <h1 className="hero-card-name">{name}</h1>
             <img className="hero-card-image" src={image} alt="" /> 
             <div className="hero-card-skill">

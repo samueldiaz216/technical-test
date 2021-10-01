@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react';
 import "./App.css";
 import HeroCard from './HeroCard';
-import HeroPage from './HeroPage';
 import Searchbar from './Searchbar';
 import Filters from './Filters';
 
@@ -21,8 +20,7 @@ function App() {
   const [powerLevelRange, setPowerLevelRange]= useState(0);
   const [combatLevelRange, setCombatLevelRange]= useState(0);
 
-  const [currentHeroPageID, setCurrentHeroPageID]=useState();
-  const [currentHeroPageActive, setCurrentHeroPageActive]=useState(false);
+
 
   
 
@@ -77,8 +75,6 @@ function App() {
                   image={hero.images.sm}
                   powerStats={hero.powerstats}
                   appearance={hero.appearance}
-                  setCurrentHeroPageID={setCurrentHeroPageID}
-                  setCurrentHeroPageActive={setCurrentHeroPageActive}
                 />
                 
 
@@ -118,24 +114,12 @@ function App() {
       
     />
       
-      <div className="main-window">
-
-        
-        
+      <div className="main-window">     
         {!heroList?<h1>loading...</h1>:heroListDisplayed}
-        
-        
-        
-        
-            
-          
-        
+  
       </div>
       
-      <HeroPage
-          id={currentHeroPageID}
-          setCurrentHeroPageActive={setCurrentHeroPageActive}
-      />
+      
 
     </div>
   )
