@@ -1,0 +1,30 @@
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+@media screen and (max-width: 870px) {
+
+    .filters{
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    
+
+
+
+    
+}
+
+
+@media screen and (max-width: 450px) {
+    
+
+    .filters{
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+}

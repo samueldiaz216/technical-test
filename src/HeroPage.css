@@ -1,0 +1,120 @@
+.hero-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+  .hero-page-info {
+    background-color: #000;
+    width: 50%;
+    text-align: center;
+    position: fixed;
+    /* Centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    z-index: 2000;
+    padding: 20px;
+    border: #DF711B 3px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .contact-form .confirmation-check {
+    position: absolute;
+    width: 40%;
+    z-index: 3000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+  }
+  .contact-form .confirmation-check.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form form .form-item {
+    margin-bottom: 1em;
+    border: #FFF 3px solid;
+    background-color: #000;
+    border-top: none;
+    border-right: none;
+    color: #FFF;
+  }
+  .contact-form form .contact-form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact-form form .contact-form-footer button {
+    font-family: "BTTF";
+    font-size: 1rem;
+    color: #FFF;
+    border: solid #FFF 3px;
+    width: 70px;
+    height: 30px;
+    text-align: center;
+  }
+  .contact-form form .contact-form-footer button:hover {
+    border-color: #DF711B;
+    color: #DF711B;
+  }
+  .contact-form form .contact-form-footer .contact-error-message {
+    font-family: "PermanentMarker";
+    font-size: 14px;
+    color: #FFF;
+  }
+  .contact .contact-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact .contact-form-header h1 {
+    color: #FFF;
+    font-family: "BTTF";
+  }
+  .contact .contact-form-header .close-button {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+  .contact .contact-form-header .close-button img {
+    width: 1.5em;
+  }
+  .contact .contact-form-header .close-button:hover {
+    opacity: 1;
+  }
+  .contact .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    /* Click events can't be captured
+    when overlay not active. You need this
+    to click buttons when overlay not active*/
+    pointer-events: none;
+    z-index: 1999;
+  }
+  .contact .overlay.active {
+    opacity: 1;
+    /* Click events can be captured
+    when overlay active. You need this shit 
+    to click buttons when overlay not active* */
+    pointer-events: all;
+  }
+
+  @media screen and (max-width: 1000px) {
+      .contact-form{
+        width: 90%;
+      }
+  }
